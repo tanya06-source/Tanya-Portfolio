@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tanya Trivedi | Personal Portfolio | B.Tech IT & AI Enthusiast</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Explore the personal portfolio of Tanya Trivedi, an ambitious B.Tech Information Technology student focused on AI, Generative AI, web development, and problem-solving. Vice Chair of ACM Membership Chapter.">
+    <meta name="keywords" content="Tanya Trivedi, Portfolio, B.Tech IT, BBDNIIT, AI, Generative AI, Web Developer, ACM Vice Chair, Programming, Python, C++, DSA">
+    <meta name="author" content="Tanya Trivedi">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Tanya Trivedi | Personal Portfolio">
+    <meta property="og:description" content="B.Tech Information Technology student focused on AI, Generative AI, and web development. Vice Chair of ACM Membership Chapter.">
+    <meta property="og:image" content="assets/profile_avatar.jpg">
+
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+       (function(){
+          emailjs.init({
+            publicKey: "U4hEnyqmPu2M8jeSr",
+          });
+       })();
+    </script>
+
+    <!-- CSS Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- ==========================================
+         1. Loading / Preloader Screen
+         ========================================== -->
+    <div id="preloader">
+        <div class="loader-logo">TANYA<span class="logo-dot"></span></div>
+        <div class="loader-spinner"></div>
+    </div>
+
+    <!-- ==========================================
+         2. Background Elements (Canvas & Glows)
+         ========================================== -->
+    <canvas id="bg-canvas"></canvas>
+    <div class="bg-glow-blob bg-glow-1"></div>
+    <div class="bg-glow-blob bg-glow-2"></div>
+
+    <!-- ==========================================
+         3. Custom Cursor (Desktop Only)
+         ========================================== -->
+    <div class="custom-cursor-dot"></div>
+    <div class="custom-cursor-outline"></div>
+
+    <!-- ==========================================
+         4. Navigation Header
+         ========================================== -->
+    <header>
+        <div class="nav-container">
+            <a href="#home" class="logo">
+                Tanya<span class="logo-dot"></span>
+            </a>
+            
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#education" class="nav-link">Education</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#services" class="nav-link">Services</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#leadership" class="nav-link">Leadership</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <!-- Theme Toggle -->
+                <button class="theme-toggle-btn" id="theme-toggle" aria-label="Toggle dark/light theme">
+                    <!-- Moon Icon (Dark Mode Active -> click to go light) -->
+                    <svg class="moon-icon" viewBox="0 0 24 24">
+                        <path d="M12 3c.132 0 .263 0 .393.007a7.5 7.5 0 0 0 7.92 12.446A9 9 0 1 1 12 3z"/>
+                    </svg>
+                    <!-- Sun Icon (Light Mode Active -> click to go dark) -->
+                    <svg class="sun-icon" viewBox="0 0 24 24">
+                        <path d="M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10zM2 12h2m16 0h2M12 2v2m0 16v2m-6.343-17.657l1.414 1.414m10.828 10.828l1.414 1.414M4.929 19.071l1.414-1.414m10.828-10.828l1.414-1.414"/>
+                    </svg>
+                </button>
+
+                <!-- Mobile Navigation Toggle Burger -->
+                <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- ==========================================
+         5. Home / Hero Section
+         ========================================== -->
+    <section id="home">
+        <div class="hero-grid">
+            <div class="hero-content">
+                <div class="hero-hello">
+                    <span class="hello-line"></span>
+                    <span>Welcome to my digital space</span>
+                </div>
+                <h1 class="hero-title">
+                    I'm <span>Tanya Trivedi</span>
+                </h1>
+                <div class="hero-tagline">
+                    <span class="typing-container">AI Enthusiast</span>
+                </div>
+                <p class="hero-desc">
+                    B.Tech I.T. student exploring AI, Generative AI, and modern web development technologies to create impactful, innovative, and user-centric tech solutions.
+                </p>
+                <div class="hero-ctas">
+                    <a href="#projects" class="btn btn-primary">
+                        <span>View Portfolio</span>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </a>
+                    <a href="#contact" class="btn btn-secondary">Contact Me</a>
+                    <!-- Dummy Download Resume button -->
+                    <a href="#" class="btn-text" onclick="alert('Resume PDF download simulation starting...'); return false;">
+                        <span>Download Resume</span>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                            <polyline points="7 10 12 15 17 10"></polyline>
+                            <line x1="12" y1="15" x2="12" y2="3"></line>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <div class="hero-image-container">
+                <div class="profile-frame">
+                    <div class="profile-image-inner">
+                        <!-- AI Generated profile picture mockup -->
+                        <img src="assets/profile_avatar.jpg" alt="Tanya Trivedi Profile Avatar">
+                    </div>
+                </div>
+
+                <!-- Floating HUD Components -->
+                <div class="hud-element hud-1">
+                    <div class="hud-icon">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                            <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                            <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                        </svg>
+                    </div>
+                    <div class="hud-text">
+                        <p>Exploring Focus</p>
+                        <span>AI & GenAI Enthusiast</span>
+                    </div>
+                </div>
+
+                <div class="hud-element hud-2">
+                    <div class="hud-icon">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="16 18 22 12 16 6"></polyline>
+                            <polyline points="8 6 2 12 8 18"></polyline>
+                        </svg>
+                    </div>
+                    <div class="hud-text">
+                        <p>Core Skill</p>
+                        <span>Frontend Web Developer</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         6. About Section
+         ========================================== -->
+    <section id="about" class="reveal">
+        <div class="section-header">
+            <span class="section-subtitle">Get To Know Me</span>
+            <h2 class="section-title">About Me</h2>
+        </div>
+
+        <div class="about-grid">
+            <div class="about-details">
+                <p>
+                    I’m a <strong>B.Tech Information Technology student</strong> exploring AI, Generative AI, and modern web development stack to build innovative and impactful digital systems. I thrive on translating creative concepts into interactive layouts, experimenting with algorithms, and pushing my capabilities.
+                </p>
+                <p>
+                    Currently, I serve as the <strong>Vice Chair of the ACM Student Membership Chapter</strong>, where I collaborate on establishing active tech communities, leading educational initiatives, and networking with developers and professionals.
+                </p>
+                <p>
+                    My career mindset is oriented towards continuous technical curiosity, strategic leadership, and rapid adaptability in high-growth developer ecosystems.
+                </p>
+
+                <div class="about-bullets">
+                    <div class="about-bullet-item">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                        <span>Curiosity for Emerging AI Tech</span>
+                    </div>
+                    <div class="about-bullet-item">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                        <span>Active Community Leadership</span>
+                    </div>
+                    <div class="about-bullet-item">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                        <span>Logical Algorithmic Mindset</span>
+                    </div>
+                    <div class="about-bullet-item">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                        <span>Continuous Learning Passion</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Animated Stat Cards -->
+            <div class="stats-grid">
+                <div class="glass-card stat-card">
+                    <span class="stat-number" data-count="2028">0</span>
+                    <span class="stat-label">Graduation Year (B.Tech IT)</span>
+                </div>
+                <div class="glass-card stat-card">
+                    <span class="stat-number" data-count="1">0</span>
+                    <span class="stat-label">ACM Chapter Vice Chair</span>
+                </div>
+                <div class="glass-card stat-card">
+                    <span class="stat-number" data-count="15">0</span>
+                    <span class="stat-label">AI & Web Projects</span>
+                </div>
+                <div class="glass-card stat-card">
+                    <span class="stat-number" data-count="10">0</span>
+                    <span class="stat-label">Events & Hackathons</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         7. Education Section
+         ========================================== -->
+    <section id="education" class="reveal">
+        <div class="section-header">
+            <span class="section-subtitle">Academic Timeline</span>
+            <h2 class="section-title">Education</h2>
+        </div>
+
+        <div class="education-timeline">
+            <!-- Timeline Item 1 -->
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="glass-card timeline-card">
+                    <span class="timeline-year">2024 - 2028 (Expected)</span>
+                    <h3 class="timeline-title">B.Tech in Information Technology</h3>
+                    <h4 class="timeline-sub">BBDNIIT (Babu Banarasi Das Northern India Institute of Technology)</h4>
+                    <p class="timeline-desc">
+                        Focussed on foundational computer sciences, programming languages, database structures, and systems engineering. Engaging in coding communities and student networks.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Timeline Item 2 -->
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="glass-card timeline-card">
+                    <span class="timeline-year">Relevant Coursework & Studies</span>
+                    <h3 class="timeline-title">Key Core Subjects & Academic Focus</h3>
+                    <h4 class="timeline-sub">Computer Science Foundations</h4>
+                    <p class="timeline-desc">
+                        Data Structures & Algorithms (Basic), Object-Oriented Programming (C++ & Python), Procedural Programming in C, Web Markup Languages, and Introductory Artificial Intelligence concepts.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Timeline Item 3 -->
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="glass-card timeline-card">
+                    <span class="timeline-year">Events & Certifications</span>
+                    <h3 class="timeline-title">Workshops, Coding Events & Hackathons</h3>
+                    <h4 class="timeline-sub">Continuous Learning Activities</h4>
+                    <p class="timeline-desc">
+                        Participating in inter-college competitive hackathons, technical workshops focusing on front-end architectures and Generative AI prompt construction, and coordinating community meetups.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         8. Skills Section
+         ========================================== -->
+    <section id="skills" class="reveal">
+        <div class="section-header">
+            <span class="section-subtitle">Technical Proficiency</span>
+            <h2 class="section-title">My Skills</h2>
+        </div>
+
+        <div class="skills-grid">
+            <!-- Category 1: Languages -->
+            <div class="glass-card skills-category">
+                <h3>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="16 18 22 12 16 6"></polyline>
+                        <polyline points="8 6 2 12 8 18"></polyline>
+                    </svg>
+                    <span>Programming Languages</span>
+                </h3>
+                <div class="skills-list">
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">Python</span>
+                            <span class="skill-percentage">80%</span>
+                        </div>
+                        <div class="skill-progress-bar">
+                            <div class="skill-progress" data-value="80"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">C++</span>
+                            <span class="skill-percentage">75%</span>
+                        </div>
+                        <div class="skill-progress-bar">
+                            <div class="skill-progress" data-value="75"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">C</span>
+                            <span class="skill-percentage">70%</span>
+                        </div>
+                        <div class="skill-progress-bar">
+                            <div class="skill-progress" data-value="70"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Category 2: Web Development -->
+            <div class="glass-card skills-category">
+                <h3>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                        <line x1="8" y1="21" x2="16" y2="21"></line>
+                        <line x1="12" y1="17" x2="12" y2="21"></line>
+                    </svg>
+                    <span>Web Development</span>
+                </h3>
+                <div class="skills-list">
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">HTML5</span>
+                            <span class="skill-percentage">90%</span>
+                        </div>
+                        <div class="skill-progress-bar">
+                            <div class="skill-progress" data-value="90"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">CSS3 / Custom Styling</span>
+                            <span class="skill-percentage">85%</span>
+                        </div>
+                        <div class="skill-progress-bar">
+                            <div class="skill-progress" data-value="85"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">JavaScript (ES6+)</span>
+                            <span class="skill-percentage">65%</span>
+                        </div>
+                        <div class="skill-progress-bar">
+                            <div class="skill-progress" data-value="65"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Category 3: Problem Solving & AI -->
+            <div class="glass-card skills-category">
+                <h3>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                    </svg>
+                    <span>Problem Solving & AI</span>
+                </h3>
+                <div class="skills-list">
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">Basic DSA</span>
+                            <span class="skill-percentage">70%</span>
+                        </div>
+                        <div class="skill-progress-bar">
+                            <div class="skill-progress" data-value="70"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">Logic Building</span>
+                            <span class="skill-percentage">80%</span>
+                        </div>
+                        <div class="skill-progress-bar">
+                            <div class="skill-progress" data-value="80"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">Emerging Tech & GenAI</span>
+                            <span class="skill-percentage">60%</span>
+                        </div>
+                        <div class="skill-progress-bar">
+                            <div class="skill-progress" data-value="60"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         9. Services Section
+         ========================================== -->
+    <section id="services" class="reveal">
+        <div class="section-header">
+            <span class="section-subtitle">What I Offer</span>
+            <h2 class="section-title">My Services</h2>
+        </div>
+
+        <div class="services-grid">
+            <!-- Service 1: Web Development -->
+            <div class="glass-card service-card">
+                <div class="service-icon-box">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                        <line x1="8" y1="21" x2="16" y2="21"></line>
+                        <line x1="12" y1="17" x2="12" y2="21"></line>
+                    </svg>
+                </div>
+                <h3 class="service-title">Web Development</h3>
+                <p class="service-desc">
+                    Creating responsive, modular, and visually engaging web layouts optimized for desktop, tablet, and mobile platforms. Emphasizing clean structure and high-performance design aesthetics.
+                </p>
+                <ul class="service-features">
+                    <li>
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                        Responsive layout implementation
+                    </li>
+                    <li>
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                        Modern Glassmorphic CSS interfaces
+                    </li>
+                    <li>
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                        SEO semantic coding best practices
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Service 2: DSA & Logic Building -->
+            <div class="glass-card service-card">
+                <div class="service-icon-box">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"></path>
+                        <line x1="4" y1="22" x2="4" y2="15"></line>
+                    </svg>
+                </div>
+                <h3 class="service-title">DSA & Problem Solving</h3>
+                <p class="service-desc">
+                    Formulating procedural logic to solve computational problems. Implementing optimized algorithm flows using standard C++ and Python structures to build strong coding fundamentals.
+                </p>
+                <ul class="service-features">
+                    <li>
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                        Structured C++/Python algorithm building
+                    </li>
+                    <li>
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                        Logic construction & dry-running support
+                    </li>
+                    <li>
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                        Debugging basic array and string problems
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         10. Projects Section
+         ========================================== -->
+    <section id="projects" class="reveal">
+        <div class="section-header">
+            <span class="section-subtitle">My Work & Demos</span>
+            <h2 class="section-title">Projects Portfolio</h2>
+        </div>
+
+        <div class="projects-grid">
+            <!-- Featured Weather App Card -->
+            <div class="glass-card project-card-featured">
+                <div class="project-info-box">
+                    <div class="project-tags">
+                        <span class="project-tag">HTML5/CSS3</span>
+                        <span class="project-tag">JavaScript</span>
+                        <span class="project-tag">API Integration</span>
+                    </div>
+                    <h3 class="project-title">Responsive Weather Dashboard</h3>
+                    <p class="project-desc">
+                        A real-time weather information application presenting accurate atmospheric metrics. Integrates weather API data within a clean, highly responsive layout. Employs dynamic backdrop card shifts depending on current atmospheric states.
+                    </p>
+                    <div class="project-links">
+                        <a href="#" class="btn btn-primary" onclick="alert('Demo placeholder: Weather app logic starts dynamically on live server.'); return false;">
+                            <span>Live Demo</span>
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                <polyline points="15 3 21 3 21 9"></polyline>
+                                <line x1="10" y1="14" x2="21" y2="3"></line>
+                            </svg>
+                        </a>
+                        <a href="https://github.com" target="_blank" class="btn btn-secondary" rel="noopener noreferrer">
+                            <span>GitHub Repository</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-image-box">
+                    <!-- AI Generated weather UI mockup -->
+                    <img src="assets/weather_mockup.png" alt="Weather Dashboard App Mockup UI">
+                </div>
+            </div>
+
+            <!-- Future Placeholders -->
+            <div class="project-placeholders">
+                <!-- AI / GenAI Placeholder -->
+                <div class="glass-card placeholder-card ai-placeholder">
+                    <div>
+                        <span class="project-tag">AI / LLM Experiment</span>
+                        <h3 class="placeholder-title">Generative AI RAG Agent</h3>
+                        <p class="placeholder-desc">
+                            Retrieval-Augmented Generation agent template utilizing Python semantic search engines.
+                        </p>
+                    </div>
+                    <div class="placeholder-footer">
+                        <span class="placeholder-status">Planned for Q3 2026</span>
+                        <span class="loader-spinner" style="width:16px; height:16px; border-width:2px; margin:0;"></span>
+                    </div>
+                </div>
+
+                <!-- Web Application Placeholder -->
+                <div class="glass-card placeholder-card">
+                    <div>
+                        <span class="project-tag">Frontend Application</span>
+                        <h3 class="placeholder-title">Custom ACM Event Portal</h3>
+                        <p class="placeholder-desc">
+                            Central registration portal for organizing local tech hackathons and coding tournaments.
+                        </p>
+                    </div>
+                    <div class="placeholder-footer">
+                        <span class="placeholder-status">Coming Soon</span>
+                        <span class="loader-spinner" style="width:16px; height:16px; border-width:2px; margin:0;"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="collaboration-note">
+            <p>
+                In addition to personal projects, I have <strong>worked on multiple collaborative, team-based, and group technical projects</strong>, which has strengthened my peer coding capability and project management skills.
+            </p>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         11. Leadership & Activities
+         ========================================== -->
+    <section id="leadership" class="reveal">
+        <div class="section-header">
+            <span class="section-subtitle">Community Contributions</span>
+            <h2 class="section-title">Leadership & Activities</h2>
+        </div>
+
+        <div class="activities-grid">
+            <!-- Role 1 -->
+            <div class="glass-card activity-card">
+                <div class="activity-badge">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="9" cy="7" r="4"></circle>
+                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                    </svg>
+                </div>
+                <div class="activity-info">
+                    <h4>ACM Student Membership Chapter</h4>
+                    <span class="activity-role">Vice Chair</span>
+                    <p class="activity-desc">
+                        Designing student chapter engagement plans, organizing core developer seminars, leading inter-college network meetups, and hosting community forums to unite emerging tech developers.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Role 2 -->
+            <div class="glass-card activity-card">
+                <div class="activity-badge">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                        <line x1="16" y1="2" x2="16" y2="6"></line>
+                        <line x1="8" y1="2" x2="8" y2="6"></line>
+                        <line x1="3" y1="10" x2="21" y2="10"></line>
+                    </svg>
+                </div>
+                <div class="activity-info">
+                    <h4>Technical Event Coordinator</h4>
+                    <span class="activity-role">Initiatives & Events</span>
+                    <p class="activity-desc">
+                        Coordinating logistics, schedules, speaker line-ups, and participant engagement pipelines for technical workshops, coding bootcamps, and developer panel discussions.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Role 3 -->
+            <div class="glass-card activity-card">
+                <div class="activity-badge">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                        <polyline points="2 17 12 22 22 17"></polyline>
+                        <polyline points="2 12 12 17 22 12"></polyline>
+                    </svg>
+                </div>
+                <div class="activity-info">
+                    <h4>Community & Peer Networking</h4>
+                    <span class="activity-role">Team Collaboration</span>
+                    <p class="activity-desc">
+                        Fostering code sharing channels, establishing learning tracks for peers in Python and basic data structures, and orchestrating study circles to build coding efficiency.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         12. Contact Section
+         ========================================== -->
+    <section id="contact" class="reveal">
+        <div class="section-header">
+            <span class="section-subtitle">Reach Out</span>
+            <h2 class="section-title">Contact Me</h2>
+        </div>
+
+        <div class="contact-grid">
+            <div class="contact-info">
+                <div>
+                    <p class="contact-desc">
+                        I am eager to explore collaboration opportunities, internships, coding events, and networking spaces. Feel free to contact me using any of the details below!
+                    </p>
+                    
+                    <div class="contact-methods">
+                        <!-- Email -->
+                        <a href="mailto:tanyatrivedi.work@gmail.com" class="contact-item">
+                            <div class="contact-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                    <polyline points="22,6 12,13 2,6"></polyline>
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="contact-label">Email Me</p>
+                                <span class="contact-value">tanyatrivedi.work@gmail.com</span>
+                            </div>
+                        </a>
+
+                        <!-- Phone -->
+                        <a href="tel:+910000000000" class="contact-item">
+                            <div class="contact-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="contact-label">Call / WhatsApp</p>
+                                <span class="contact-value">+91 (Simulated Phone)</span>
+                            </div>
+                        </a>
+
+                        <!-- Location -->
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                    <circle cx="12" cy="10" r="3"></circle>
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="contact-label">Location</p>
+                                <span class="contact-value">Lucknow, Uttar Pradesh, India</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="socials-container">
+                    <p>Connect with me online</p>
+                    <div class="socials-grid">
+                        <!-- LinkedIn -->
+                        <a href="https://linkedin.com" target="_blank" class="social-circle" rel="noopener noreferrer" title="LinkedIn Profile">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                                <rect x="2" y="9" width="4" height="12"></rect>
+                                <circle cx="4" cy="4" r="2"></circle>
+                            </svg>
+                        </a>
+                        <!-- GitHub -->
+                        <a href="https://github.com" target="_blank" class="social-circle" rel="noopener noreferrer" title="GitHub Profile">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                            </svg>
+                        </a>
+                        <!-- Instagram -->
+                        <a href="https://instagram.com" target="_blank" class="social-circle" rel="noopener noreferrer" title="Instagram Profile">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="glass-card">
+                <form class="contact-form" id="contact-form">
+                    <div class="form-group-row">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" class="form-control" placeholder="John Doe" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" class="form-control" placeholder="john@example.com" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" class="form-control" placeholder="Collab / Feedback / Inquiry" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" class="form-control" placeholder="Type your message here..." required></textarea>
+                    </div>
+
+                    <div id="form-alert" class="form-alert"></div>
+
+                    <button type="submit" class="btn btn-primary" style="align-self: flex-start; border: none;">
+                        <span>Send Message</span>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="22" y1="2" x2="11" y2="13"></line>
+                            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                        </svg>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         13. Footer
+         ========================================== -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-copy">
+                <p>&copy; 2026 <strong>Tanya Trivedi</strong>. All rights reserved.</p>
+                <p style="font-size: 0.75rem; margin-top: 0.25rem;">Built for innovation & growth.</p>
+            </div>
+
+            <ul class="footer-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <!-- JavaScript Bundle -->
+    <script src="script.js"></script>
+</body>
+</html>
